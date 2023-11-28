@@ -12,9 +12,9 @@ We will go through the coding process step-by-step in the README. You can find t
 
 ### Prerequisites
 
-Recall.ai API Key
-Zoom Account
-Python 3
+- Recall.ai API Key
+- Zoom Account
+- Python 3
 
 ## Writing Python Code
 
@@ -49,7 +49,7 @@ response = requests.post(URL, json=payload, headers=headers).json()
 print(response)
 ```
 
-You should now see a bot join your Zoom meeting! Feel free to chat away; when the meeting is finished our bot will generate a recording. Make sure to copy the "id" field you get in your response as we will be using this in the next step. You can find this program in this project as "createbot.py".
+You should now see a bot join your Zoom meeting! Feel free to chat away; when the meeting is finished our bot will generate a recording. Make sure to copy the "id" field you get in your response as we will be using this in the next step. You can find this program in this repo as "createbot.py".
 
 ### Retrieving bot information
 
@@ -81,7 +81,7 @@ response = requests.get(URL, headers=headers).json()
 print(response)
 ```
 
-The second field should be "video_url" and if you access the link you'll download the recording of the meeting! This output also contains some neat metadata on the meeting so you can reuse this code if you like. You can find this program in this project as "retrievebot.py".
+The second field should be "video_url" and if you access the link you'll download the recording of the meeting! This output also contains some neat metadata on the meeting so you can reuse this code if you like. You can find this program in this repo as "retrievebot.py".
 
 ### Combining creating and retrieving the bot
 
@@ -132,7 +132,7 @@ while video_url is None:
 print(video_url)
 ```
 
-It's not the most elegant solution but now all you have to do is run this program once at the beginning of the meeting and you'll get the video link at the end.
+It's not the most elegant solution but now all you have to do is run this program once at the beginning of the meeting and you'll get the video link at the end. You can find this program in this repo as "pollbot.py".
 
 ### Accepting user arguments and scheduling in advance
 
@@ -200,7 +200,7 @@ payload = {
 }
 ```
 
-Now if we specify '- - join-at=2023-11-28T16:00:00-0500' on the command line, our bot will join the specified meeting at 4pm ET on November 28th. This field remains optional; if we do not specify a time or if we put something in the past, the bot will simply be created immediately. 
+Now if we specify '- - join-at=2023-11-28T16:00:00-0500' on the command line, our bot will join the specified meeting at 4pm ET on November 28th. This field remains optional; if we do not specify a time or if we put something in the past, the bot will simply be created immediately. You can find this program in this repo as "meetingbot.py".
 
 ### Recap
 
